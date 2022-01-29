@@ -1,4 +1,4 @@
-# Demo_LDA<br>
+# Demo_FitzHughNagumo<br>
 Sample of MATLAB implementation for stability analysis of Fitz-Hugh Nagumo model
 
 # Example of the results
