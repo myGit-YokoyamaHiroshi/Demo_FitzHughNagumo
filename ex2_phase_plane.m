@@ -16,13 +16,18 @@ set(0,'defaultUicontrolFontName','Arial');
 Nt     = 50000;  % Num. of sample
 fs     = 100;    % sampling frequency 
 dt     = 1/fs;   % time step for numerical integration
-
 time   = linspace(0, Nt-1, Nt)/fs; % time vector; unit : seconds
 %%%%% parameter settings
 I      =  0.23;  % 
 tau    =  20;
 a      = -0.3;
 b      =  1.4;
+
+% I      =  0.48; 
+% tau    =  20;
+% a      = -0.6;
+% b      =  0.5;
+
 X0     = [0, 0]; % initial value of state variables
                  % X0(1): membrane potential, v
                  % X0(2): recovery variable,  w
@@ -57,7 +62,7 @@ dV   = dV./norm;
 dW   = dW./norm;
 %% Determine the stability of each equilibrium points
 %%%%% Calculate equilibrium points
-[v_eq, w_eq] = salve_equilibria_FitzHughNagumo(I, tau, a, b);
+[v_eq, w_eq] = solve_equilibria_FitzHughNagumo(I, tau, a, b);
 eqpt_labels  = cell(1, length(v_eq));
 for i = 1:length(v_eq)
     X = [v_eq(i), w_eq(i)];

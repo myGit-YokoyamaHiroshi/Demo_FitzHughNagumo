@@ -1,4 +1,4 @@
-function [v_eq, w_eq] = salve_equilibria_FitzHughNagumo(varargin)
+function [v_eq, w_eq] = solve_equilibria_FitzHughNagumo(varargin)
     if length(varargin)==1    
         par  = varargin{1};
     else
