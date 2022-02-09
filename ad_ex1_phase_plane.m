@@ -14,9 +14,8 @@ set(0,'defaultUipanelFontName','Arial');
 set(0,'defaultUicontrolFontName','Arial');
 %%
 Nt     = 50000;  % Num. of sample
-fs     = 100;    % sampling frequency 
-dt     = 1/fs;   % time step for numerical integration
-time   = linspace(0, Nt-1, Nt)/fs; % time vector; unit : seconds
+dt     = 0.01;   % time step for numerical integration, unit: msec
+time   = linspace(0, Nt-1, Nt)*dt; % time vector; unit : msec
 %%%%% parameter settings
 I      =  0.23;  % 
 tau    =  20;
@@ -100,7 +99,7 @@ hold on
 plot(time, X_trj(:,2), 'LineWidth', 3);
 hold off
 
-xlabel('time (s)')
+xlabel('time (ms)')
 ylabel('v, w')
 lgnd = legend({'membrane potential \it v', 'recovery variable \it w'}, 'location', 'northeastoutside');
 
@@ -111,7 +110,7 @@ trj_labels = {'trajectory'};
 
 hold on
 %%% plot vector fields
-quiver(V, W, dV, dW, 'color', [0.6, 0.6, 0.6],'HandleVisibility','off'); 
+quiver(V, W, dV, dW, 'linewidth',1,'color', [0.6, 0.6, 0.6],'HandleVisibility','off'); 
 
 %%% plot nullcline
 plot(v_null, w_null, 'k-', 'LineWidth', 1,'HandleVisibility','off'); 
@@ -131,6 +130,6 @@ ylim([-1.0, 1.0])
 alpha(0.8)
 sfh2.Position = sfh2.Position - [0.05, 0, 0, 0];
 
-fname = [filepath, filesep, 'figures', filesep, 'ex2', filesep, 'stability'];
+fname = [filepath, filesep, 'figures', filesep, 'ad_ex1', filesep, 'stability'];
 figure_save(fig, fname)
 hold off

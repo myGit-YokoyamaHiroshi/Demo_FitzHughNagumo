@@ -15,8 +15,8 @@ set(0,'defaultUicontrolFontName','Arial');
 %%
 Nt     = 50000;  % Num. of sample
 fs     = 100;    % sampling frequency 
-dt     = 1/fs;   % time step for numerical integration
-time   = linspace(0, Nt-1, Nt)/fs; % time vector; unit : seconds
+dt     = 0.01;   % time step for numerical integration, unit: msec
+time   = linspace(0, Nt-1, Nt)*dt; % time vector; unit : msec
 %%%%% parameter settings
 I      =  linspace(0, 1, 100);
 tau    =  20;
@@ -103,6 +103,6 @@ xlabel('parameter \it I')
 ylabel('Membrane potential V_*')
 legend('location', 'southeast')
 
-fname = [filepath, filesep, 'figures', filesep, 'ex3', filesep, 'bifurcation'];
+fname = [filepath, filesep, 'figures', filesep, 'ad_ex2', filesep, 'bifurcation'];
 figure_save(fig, fname)
 %%
