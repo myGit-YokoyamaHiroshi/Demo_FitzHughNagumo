@@ -17,7 +17,7 @@ Nt     = 50000;  % Num. of sample
 dt     = 0.01;   % time step for numerical integration, unit: msec
 time   = linspace(0, Nt-1, Nt)*dt; % time vector; unit : msec
 %%%%% parameter settings
-I      =  0.23;  % 
+I      =  0.22;  % 
 tau    =  20;
 a      = -0.3;
 b      =  1.4;
@@ -126,7 +126,7 @@ axis tight equal;
 
 title('phase plane')
 xlim([-1.2, 1.2])
-ylim([-1.0, 1.0])
+ylim([-1.0, 1.2])
 alpha(0.8)
 sfh2.Position = sfh2.Position - [0.05, 0, 0, 0];
 

@@ -17,7 +17,7 @@ Nt     = 50000;  % Num. of sample
 dt     = 0.01;   % time step for numerical integration, unit: msec
 time   = linspace(0, Nt-1, Nt)*dt; % time vector; unit : msec
 %%%%% parameter settings
-I      =  0.23;  % 
+I      =  0.22;  % 
 tau    =  20;
 a      = -0.3;
 b      =  1.4;
